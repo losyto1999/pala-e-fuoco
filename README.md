@@ -141,7 +141,7 @@ Configurazione, una sola volta: *Settings → Pages → Build and deployment →
 
 ## Lingua
 
-La lingua viene scelta in quest'ordine: il parametro `?lng=it` / `?lng=en` nell'URL, poi la scelta fatta con il selettore (salvata nel `localStorage` alla chiave `pala-e-fuoco:lang`), infine la lingua del browser. Se nessuna corrisponde, il sito è in italiano.
+La lingua viene scelta in quest'ordine: il parametro `?lng=it` / `?lng=en` nell'URL, poi la scelta fatta con il selettore (salvata nel `localStorage` alla chiave `pala-e-fuoco:lang`), infine la lingua del browser. Il parametro `lng`, una volta letto e salvato, viene tolto dall'URL (`src/i18n/index.ts`): l'indirizzo resta pulito e, ricaricando, non ha la precedenza su una scelta fatta poi con il selettore. Se nessuna corrisponde, il sito è in italiano.
 
 I testi stanno in `src/locales/it.json` e `src/locales/en.json` (namespace `pizzeria`), con la stessa struttura di chiavi. `data/menu.ts` contiene solo nomi e prezzi: i nomi delle pizze sono nomi propri e restano uguali nelle due lingue, gli ingredienti stanno alla chiave `menu.items.<slug>.ingredients` e `useMenu.ts` li unisce ai dati. Lo stato di apertura (`getOpeningStatus`) non contiene frasi, solo uno stato: la frase la costruisce `OpeningStatus.tsx` con `t()`. I prezzi si formattano con `Intl`; l'inglese usa `en-GB`, con l'euro (`€7.50`). URL e ancore (`/menu`, `#contatti`) sono identificativi e restano uguali in tutte le lingue.
 

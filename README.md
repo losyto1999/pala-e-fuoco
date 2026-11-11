@@ -104,6 +104,7 @@ src/
     locale.ts              lingua attiva e locale per Intl
   locales/
     it.json, en.json       tutti i testi del sito
+  portfolio/               pillola «torna al portfolio», solo per chi arriva da flowsi.it
   pages/
     PizzeriaHome.tsx       home: apertura, storia, cosa c'è in carta, contatti
     PizzeriaMenu.tsx       menù con filtro e illustrazioni
@@ -117,6 +118,14 @@ docs/screenshots/          immagini di questo README
 ```
 
 Indirizzo, telefono e orari sono definiti una volta sola, in `src/data/info.ts`: nav, home, footer e stato di apertura li leggono da lì. Fanno eccezione il titolo della home e quello dei contatti («in via del Forno», «Ci trovi in via del Forno 12, a Roma»), che sono frasi dei testi e vanno aggiornati a mano. I giorni di apertura per esteso («martedì–domenica») stanno nei testi (`hours.openDays`) e vanno tenuti allineati a `HOURS.closedDay`.
+
+## Arrivo dal portfolio
+
+La demo fa parte del portfolio [flowsi.it](https://flowsi.it), che la apre con il parametro `?from=portfolio`. Solo in quel caso, in alto a sinistra, compare una pillola fissa che riporta al portfolio (`src/portfolio/`). Chi arriva da GitHub o da un link diretto non la vede.
+
+- `fromPortfolio.ts`, importato in `main.tsx` prima del render, salva il segnale nel `sessionStorage` (chiave `portfolio:back`) e toglie `from` dall'URL. Così la pillola resta navigando tra le pagine della scheda, ma un link copiato non la porta con sé. Mette anche l'attributo `data-portfolio-back` su `<html>`.
+- `BackToPortfolio.tsx` è la pillola, con i testi IT/EN al suo interno. Riporta sempre a `https://flowsi.it/#progetti`: l'indirizzo è fisso nel codice e non letto dall'URL, così nessuno può usarla per mandare altrove.
+- Le classi con la variante `back:` (definita nel foglio di stile) valgono solo con quell'attributo: nell'header lasciano spazio alla pillola.
 
 ## Pubblicazione su GitHub Pages
 

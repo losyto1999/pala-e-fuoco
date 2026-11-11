@@ -5,6 +5,10 @@
 
 @source './';
 
+/* Demo aperta dal portfolio: <html data-portfolio-back> (vedi portfolio/fromPortfolio.ts). Le classi
+   con back: lasciano spazio alla pillola fissa "torna al portfolio" in alto a sinistra. */
+@custom-variant back (&:where([data-portfolio-back] *));
+
 @theme {
     /* Il sito imita un menù stampato: un Clarendon (Besley) per titoli, nomi e prezzi,
        un serif da lettura (Literata, con asse opsz automatico) per il testo. */

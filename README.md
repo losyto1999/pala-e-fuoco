@@ -2,7 +2,7 @@
 
 Sito di una pizzeria di quartiere immaginaria, con **menù filtrabile, orari e stato di apertura in tempo reale**. Ha due pagine, la home e il menù, in italiano e inglese, con uno stile «da menù stampato» su fondo color carta.
 
-![Home: titolo, foto della Margherita e stato di apertura](docs/screenshots/hero.png)
+![Home: titolo, illustrazione della Margherita e stato di apertura](docs/screenshots/hero.png)
 
 **Demo online:** il sito è pubblicato con GitHub Pages; il link è nella sezione *About* di questo repository.
 
@@ -11,16 +11,16 @@ Sito di una pizzeria di quartiere immaginaria, con **menù filtrabile, orari e s
 ## Funzionalità
 
 - **Stato di apertura** calcolato sull'ora di Roma, non su quella del visitatore: «Adesso siamo aperti, fino alle 23:00», «Stasera apriamo alle 18:30» oppure «Adesso siamo chiusi: riapriamo domani alle 18:30». Si aggiorna da solo ogni 30 secondi; il giorno di chiusura la riga di oggi negli orari si evidenzia.
-- **Menù** di 10 pizze con prezzo, ingredienti e foto per le tre classiche, più il supplemento per l'impasto senza glutine. Il filtro «Solo vegetariane» mostra quante pizze troverebbe e annuncia il risultato ai lettori di schermo.
+- **Menù** di 10 pizze con prezzo, ingredienti e illustrazione per le tre classiche, più il supplemento per l'impasto senza glutine. Il filtro «Solo vegetariane» mostra quante pizze troverebbe e annuncia il risultato ai lettori di schermo.
 - **Link diretti alle pizze**: in home ogni nome porta alla sua voce nel menù (`/menu#diavola`), che si illumina per un attimo. Anche «Dove siamo» (`/#contatti`) funziona da qualunque pagina.
 - **Riassunto del menù** in home ricavato dai dati: numero di pizze, quante sono vegetariane, la più economica e la più cara. Cambiando il menù il testo resta giusto.
 - **Italiano e inglese** con un selettore nella nav. La scelta resta salvata nel browser. Prezzi (`7,50 €` / `€7.50`) e giorni cambiano con la lingua; gli orari restano in 24 ore.
-- **Responsive**, da 320px in su: sotto i 375px il logo lascia il posto al solo nome, su mobile le foto del menù diventano una striscia orizzontale.
+- **Responsive**, da 320px in su: sotto i 375px il logo lascia il posto al solo nome, su mobile le illustrazioni del menù diventano una striscia orizzontale.
 - **Accessibile**: contrasti WCAG AA, filtro con annuncio per i lettori di schermo, animazioni spente con «riduci movimento» attivo nel sistema.
 
 | Menù | Contatti e orari |
 |---|---|
-| ![Menù con il filtro vegetariano e le foto delle pizze](docs/screenshots/menu.png) | ![Orari, stato di apertura e cartina della zona](docs/screenshots/contatti.png) |
+| ![Menù con il filtro vegetariano e le illustrazioni delle pizze](docs/screenshots/menu.png) | ![Orari, stato di apertura e cartina della zona](docs/screenshots/contatti.png) |
 
 ![Versione mobile in italiano e in inglese](docs/screenshots/mobile.png)
 
@@ -66,7 +66,7 @@ Altri dettagli:
 
 ### Menù
 
-Ogni pizza in `MENU` ha uno slug, il nome, il prezzo in euro, la foto (solo Margherita, Marinara e Diavola) e il segno «vegetariana». Gli ingredienti sono nei testi, alla chiave `menu.items.<slug>.ingredients`: `useMenu` li unisce ai dati nella lingua attiva.
+Ogni pizza in `MENU` ha uno slug, il nome, il prezzo in euro, l'illustrazione (solo Margherita, Marinara e Diavola) e il segno «vegetariana». Gli ingredienti sono nei testi, alla chiave `menu.items.<slug>.ingredients`: `useMenu` li unisce ai dati nella lingua attiva.
 
 - **Filtro «Solo vegetariane»**: nasconde le altre pizze e annuncia ai lettori di schermo quante ne restano («5 pizze mostrate»). Il numero tra parentesi nell'etichetta si conta dai dati.
 - **Senza glutine**: l'impasto senza glutine non è una pizza ma un supplemento (`GLUTEN_FREE_PRICE`, 2 €). Chiude sempre l'elenco, anche con il filtro attivo, con il prezzo preceduto da «+».
@@ -86,18 +86,18 @@ src/
   App.tsx                  rotte: / (home) e /menu
   PizzeriaLayout.tsx       nav, pagina e footer
   pizzeria.css             Tailwind con il tema della pizzeria (palette, font, grana della carta)
-  assets/                  logo e foto delle pizze (WebP)
+  assets/                  logo e illustrazioni delle pizze (WebP)
   components/
     PizzeriaNav.tsx        logo, link, selettore di lingua e pulsante «Chiama»
     PizzeriaFooter.tsx     indirizzo, telefono e orari
     LanguageSwitch.tsx     selettore IT/EN
     MenuRow.tsx            voce di menù con i puntini di guida; id = slug, usato come ancora
-    PhotoPrint.tsx         foto di una pizza trattata come una stampa, con didascalia
+    PhotoPrint.tsx         illustrazione di una pizza trattata come una stampa, con didascalia
     OpeningStatus.tsx      riga «aperto / chiuso»
     StreetMap.tsx          cartina disegnata della zona (SVG)
     ui/Reveal.tsx          comparsa animata delle sezioni allo scroll
   data/
-    menu.ts                le pizze: nome, prezzo in euro, foto, vegetariana
+    menu.ts                le pizze: nome, prezzo in euro, illustrazione, vegetariana
     info.ts                indirizzo e telefono (fittizi), orari e getOpeningStatus()
   i18n/
     index.ts               configurazione di i18next
@@ -106,7 +106,7 @@ src/
     it.json, en.json       tutti i testi del sito
   pages/
     PizzeriaHome.tsx       home: apertura, storia, cosa c'è in carta, contatti
-    PizzeriaMenu.tsx       menù con filtro e foto
+    PizzeriaMenu.tsx       menù con filtro e illustrazioni
   useHours.ts              giorni e orari nella lingua attiva
   useMenu.ts               menù con gli ingredienti nella lingua attiva
   useOpeningStatus.ts      stato di apertura, ricalcolato ogni 30 secondi
@@ -144,7 +144,7 @@ Il tono è discorsivo: «noi», la pizzeria, che parla al cliente dando del «tu
 
 ### Direzione visiva: «La carta»
 
-Il sito imita il menù stampato che il cliente trova sul tavolo: fondo color carta con una grana leggera, inchiostro scuro, un secondo inchiostro terracotta, filetti orizzontali (anche doppi) al posto dei riquadri. Le foto sono trattate come stampe appoggiate sul foglio, con didascalia presa dal menù; le pizze senza foto restano solo testo. Anche il selettore di lingua è «a stampa»: due voci di testo, quella attiva sottolineata come i link della nav. La cartina dei contatti è disegnata con gli stessi colori.
+Il sito imita il menù stampato che il cliente trova sul tavolo: fondo color carta con una grana leggera, inchiostro scuro, un secondo inchiostro terracotta, filetti orizzontali (anche doppi) al posto dei riquadri. Le illustrazioni delle pizze, viste dall'alto su un tagliere, sono trattate come stampe appoggiate sul foglio, con didascalia presa dal menù; le pizze senza illustrazione restano solo testo. Anche il selettore di lingua è «a stampa»: due voci di testo, quella attiva sottolineata come i link della nav. La cartina dei contatti è disegnata con gli stessi colori.
 
 Da evitare: card con ombra morbida e icona, badge e pulsanti a pillola, gradienti decorativi, icone al posto delle immagini.
 

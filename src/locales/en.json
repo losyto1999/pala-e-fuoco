@@ -1,0 +1,75 @@
+{
+    "weekdays": ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+    "hours": {
+        "openDays": "Tuesday–Sunday",
+        "summary": "{{days}} {{opens}}–{{closes}}, closed on {{closedDay}}s",
+        "closed": "closed",
+        "today": "today"
+    },
+    "opening": {
+        "open": "We're open now, until {{time}}.",
+        "opensTonight": "We open tonight at {{time}}.",
+        "closedToday": "Today is {{weekday}} and we're closed: we reopen {{when}} at {{time}}.",
+        "closed": "We're closed right now: we reopen {{when}} at {{time}}.",
+        "tomorrow": "tomorrow",
+        "onWeekday": "on {{weekday}}"
+    },
+    "nav": {
+        "pizzeria": "The pizzeria",
+        "menu": "Menu",
+        "where": "Find us",
+        "call": "Call {{phone}}",
+        "language": "Language"
+    },
+    "footer": {
+        "tagline": "Wood-fired pizzeria in Rome"
+    },
+    "home": {
+        "kickerPlace": "Pizzeria in Rome",
+        "kickerSince": "wood-fired oven since 2011",
+        "title": "Wood-fired pizza, on Via del Forno.",
+        "intro": "We knead by hand every morning and let the dough rise for more than 24 hours. In the evening, from Tuesday to Sunday, the pizzas come out of the wood-fired oven: you can eat them here, pick them up or have them brought to your door.",
+        "seeMenu": "See the menu",
+        "callUs": "Call us: <phone>{{number}}</phone>",
+        "storyTitle": "A neighbourhood pizzeria",
+        "story1": "Gianni opened it in 2011: he wanted to use quality ingredients and bring real Neapolitan dough to the neighbourhood, with a long rise and a wood-fired oven. The menu is short: we'd rather make a few pizzas and look after each one.",
+        "story2": "It's classic Neapolitan pizza, with a tall, soft crust, baked in the wood-fired oven at 450 degrees. The dough rises naturally for a long time, 24 hours: it takes longer, but the pizza comes out lighter and easier to digest.",
+        "story3": "The classic pizzas use San Marzano PDO tomatoes; we get cheese and vegetables from local producers, and the vegetables follow the season. We make the dough and choose what goes on top.",
+        "slogan": "The fire does the rest.",
+        "cardTitle": "What's on the menu",
+        "cardSummary": "There are {{total}} pizzas on the menu, {{vegetarian}} of them vegetarian: from the {{cheapest}} at {{cheapestPrice}} to the {{priciest}} at {{priciestPrice}}. Tap a name to see the ingredients. Gluten-free dough is available too.",
+        "fullMenu": "Read the full menu",
+        "contactTitle": "Find us at Via del Forno 12, Rome",
+        "contactText": "To book a table or place an order, give us a call. You can pick the pizza up or we'll bring it to your door: delivery costs €1."
+    },
+    "menu": {
+        "kicker": "Menu",
+        "title": "The pizzas",
+        "intro": "They all start from the same dough, made by hand and left to rise for 24 hours, and bake in the wood-fired oven. If you don't eat meat, tick “vegetarian only”.",
+        "phoneLine": "For takeaway or delivery, call <phone>{{number}}</phone>.",
+        "onlyVegetarian": "Vegetarian only ({{n}})",
+        "shown_one": "{{count}} pizza shown",
+        "shown_other": "{{count}} pizzas shown",
+        "vegetarian": "Vegetarian",
+        "photoAlt": "{{name}} pizza",
+        "glutenFree": {
+            "name": "Gluten-free dough",
+            "note": "Available as an add-on to any pizza"
+        },
+        "items": {
+            "margherita": { "ingredients": ["San Marzano tomato", "Fior di latte mozzarella", "Basil", "Extra virgin olive oil"] },
+            "marinara": { "ingredients": ["San Marzano tomato", "Garlic", "Oregano", "Extra virgin olive oil"] },
+            "diavola": { "ingredients": ["Tomato", "Fior di latte mozzarella", "Spicy salami", "Fresh chilli"] },
+            "quattro-formaggi": { "ingredients": ["Fior di latte mozzarella", "Gorgonzola", "Parmesan", "Smoked provola"] },
+            "capricciosa": { "ingredients": ["Tomato", "Fior di latte mozzarella", "Cooked ham", "Mushrooms", "Artichokes", "Olives"] },
+            "prosciutto-e-funghi": { "ingredients": ["Tomato", "Fior di latte mozzarella", "Cooked ham", "Button mushrooms"] },
+            "boscaiola": { "ingredients": ["Fior di latte mozzarella", "Sausage", "Porcini mushrooms", "Rosemary"] },
+            "parmigiana": { "ingredients": ["Tomato", "Fried aubergine", "Fior di latte mozzarella", "Parmesan", "Basil"] },
+            "nduja-e-burrata": { "ingredients": ["Tomato", "Calabrian 'nduja", "Fresh burrata", "Basil"] },
+            "ortolana": { "ingredients": ["Tomato", "Grilled courgettes", "Aubergine", "Peppers", "Fior di latte mozzarella"] }
+        }
+    },
+    "map": {
+        "label": "Map of the area: {{address}}"
+    }
+}

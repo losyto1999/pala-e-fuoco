@@ -1,0 +1,75 @@
+{
+    "weekdays": ["domenica", "lunedì", "martedì", "mercoledì", "giovedì", "venerdì", "sabato"],
+    "hours": {
+        "openDays": "martedì–domenica",
+        "summary": "{{days}} {{opens}}–{{closes}}, {{closedDay}} chiuso",
+        "closed": "chiuso",
+        "today": "oggi"
+    },
+    "opening": {
+        "open": "Adesso siamo aperti, fino alle {{time}}.",
+        "opensTonight": "Stasera apriamo alle {{time}}.",
+        "closedToday": "Oggi è {{weekday}} e siamo chiusi: riapriamo {{when}} alle {{time}}.",
+        "closed": "Adesso siamo chiusi: riapriamo {{when}} alle {{time}}.",
+        "tomorrow": "domani",
+        "onWeekday": "{{weekday}}"
+    },
+    "nav": {
+        "pizzeria": "La pizzeria",
+        "menu": "Menù",
+        "where": "Dove siamo",
+        "call": "Chiama il {{phone}}",
+        "language": "Lingua"
+    },
+    "footer": {
+        "tagline": "Pizzeria con forno a legna, a Roma"
+    },
+    "home": {
+        "kickerPlace": "Pizzeria a Roma",
+        "kickerSince": "forno a legna dal 2011",
+        "title": "Pizza cotta a legna, in via del Forno.",
+        "intro": "Impastiamo a mano ogni mattina e lasciamo lievitare l'impasto per più di 24 ore. La sera, da martedì a domenica, le pizze escono dal forno a legna: puoi mangiarle qui, passare a prenderle o fartele portare a casa.",
+        "seeMenu": "Vedi il menù",
+        "callUs": "Chiamaci: <phone>{{number}}</phone>",
+        "storyTitle": "Una pizzeria di quartiere",
+        "story1": "Gianni l'ha aperta nel 2011: voleva usare ingredienti di qualità e portare nel quartiere l'impasto napoletano, quello vero, con la lievitazione lunga e il forno a legna. Il menù è corto: preferiamo fare poche pizze e curarle una per una.",
+        "story2": "La pizza è napoletana classica, con il cornicione alto e soffice, e cuoce nel forno a legna a 450 gradi. La lievitazione è naturale e lunga, 24 ore: ci vuole più tempo, ma la pizza viene più leggera e si digerisce meglio.",
+        "story3": "Il pomodoro delle pizze classiche è San Marzano DOP; formaggi e verdure li prendiamo da produttori della zona, e le verdure seguono la stagione. Noi prepariamo l'impasto e scegliamo cosa metterci sopra.",
+        "slogan": "Il resto lo fa il fuoco.",
+        "cardTitle": "Cosa c'è in carta",
+        "cardSummary": "In carta ci sono {{total}} pizze, {{vegetarian}} vegetariane: si va dalla {{cheapest}} a {{cheapestPrice}} alla {{priciest}} a {{priciestPrice}}. Tocca un nome per vedere gli ingredienti. È disponibile anche l'impasto senza glutine.",
+        "fullMenu": "Leggi il menù completo",
+        "contactTitle": "Ci trovi in via del Forno 12, a Roma",
+        "contactText": "Per prenotare un tavolo o ordinare, chiamaci. La pizza puoi passare a prenderla oppure te la portiamo a casa: la consegna costa 1 euro."
+    },
+    "menu": {
+        "kicker": "Menù",
+        "title": "Le pizze",
+        "intro": "Partono tutte dallo stesso impasto, fatto a mano e lasciato lievitare 24 ore, e cuociono nel forno a legna. Se non mangi carne, spunta «solo vegetariane».",
+        "phoneLine": "Per l'asporto o la consegna chiama il <phone>{{number}}</phone>.",
+        "onlyVegetarian": "Solo vegetariane ({{n}})",
+        "shown_one": "{{count}} pizza mostrata",
+        "shown_other": "{{count}} pizze mostrate",
+        "vegetarian": "Vegetariana",
+        "photoAlt": "Pizza {{name}}",
+        "glutenFree": {
+            "name": "Impasto senza glutine",
+            "note": "Aggiunta disponibile su qualsiasi pizza"
+        },
+        "items": {
+            "margherita": { "ingredients": ["Pomodoro San Marzano", "Fior di latte", "Basilico", "Olio EVO"] },
+            "marinara": { "ingredients": ["Pomodoro San Marzano", "Aglio", "Origano", "Olio EVO"] },
+            "diavola": { "ingredients": ["Pomodoro", "Fior di latte", "Salame piccante", "Peperoncino fresco"] },
+            "quattro-formaggi": { "ingredients": ["Fior di latte", "Gorgonzola", "Parmigiano", "Provola affumicata"] },
+            "capricciosa": { "ingredients": ["Pomodoro", "Fior di latte", "Prosciutto cotto", "Funghi", "Carciofini", "Olive"] },
+            "prosciutto-e-funghi": { "ingredients": ["Pomodoro", "Fior di latte", "Prosciutto cotto", "Funghi champignon"] },
+            "boscaiola": { "ingredients": ["Fior di latte", "Salsiccia", "Funghi porcini", "Rosmarino"] },
+            "parmigiana": { "ingredients": ["Pomodoro", "Melanzane fritte", "Fior di latte", "Parmigiano", "Basilico"] },
+            "nduja-e-burrata": { "ingredients": ["Pomodoro", "'Nduja calabrese", "Burrata fresca", "Basilico"] },
+            "ortolana": { "ingredients": ["Pomodoro", "Zucchine grigliate", "Melanzane", "Peperoni", "Fior di latte"] }
+        }
+    },
+    "map": {
+        "label": "Cartina della zona: {{address}}"
+    }
+}

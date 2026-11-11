@@ -1,0 +1,92 @@
+@import 'tailwindcss' source(none);
+@import '@fontsource-variable/besley';
+@import '@fontsource-variable/literata/opsz.css';
+@import '@fontsource-variable/literata/opsz-italic.css';
+
+@source './';
+
+@theme {
+    /* Il sito imita un menù stampato: un Clarendon (Besley) per titoli, nomi e prezzi,
+       un serif da lettura (Literata, con asse opsz automatico) per il testo. */
+    --font-display: 'Besley Variable', ui-serif, Georgia, serif;
+    --font-text: 'Literata Variable', ui-serif, Georgia, serif;
+
+    --color-crema-50: #fdf8f0;
+    --color-crema-100: #faf1e2;
+    --color-crema-200: #f3e3c8;
+
+    --color-terracotta-400: #e8734a;
+    --color-terracotta-500: #d85c33;
+    --color-terracotta-600: #c14a27;
+    --color-terracotta-700: #9c3a1f;
+    --color-terracotta-800: #7a2f1a;
+
+    --color-basilico-500: #6b7a3a;
+    --color-basilico-600: #566130;
+
+    --color-carbone-800: #2b2420;
+    --color-carbone-900: #1c1815;
+
+    --color-grano-400: #e3a94d;
+    --color-grano-500: #d3922e;
+
+    /* Ombra corta e netta, da foto stampata appoggiata sul foglio. */
+    --shadow-stampa: 0 1px 1px rgb(28 24 21 / 0.14), 0 4px 10px -6px rgb(28 24 21 / 0.35);
+
+    --animate-fiamma: fiamma 3s ease-in-out infinite;
+    --animate-segna: segna 2.4s ease-out;
+
+    @keyframes fiamma {
+        0%,
+        100% {
+            transform: scale(1);
+            opacity: 1;
+        }
+        50% {
+            transform: scale(1.35);
+            opacity: 0.6;
+        }
+    }
+
+    /* Evidenzia per un attimo la voce di menù raggiunta da un'ancora. */
+    @keyframes segna {
+        0%,
+        40% {
+            background-color: color-mix(in oklab, var(--color-grano-400) 40%, transparent);
+        }
+        100% {
+            background-color: transparent;
+        }
+    }
+}
+
+@layer base {
+    html {
+        scroll-behavior: smooth;
+        /* Le ancore (#contatti, #margherita…) restano sotto la nav sticky, alta 5rem (h-20). */
+        scroll-padding-top: 5rem;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+        html {
+            scroll-behavior: auto;
+        }
+    }
+
+    /* Grana di carta: rumore SVG tinto con carbone-900, appena percettibile sul crema. */
+    .pizzeria-root {
+        @apply bg-crema-50 font-text text-carbone-800 antialiased;
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='240' height='240'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0.11 0 0 0 0 0.094 0 0 0 0 0.082 1.4 0 0 0 -0.55'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.28'/%3E%3C/svg%3E");
+    }
+
+    .pizzeria-root h1,
+    .pizzeria-root h2,
+    .pizzeria-root h3 {
+        @apply font-display text-carbone-900;
+        text-wrap: balance;
+    }
+
+    .pizzeria-root ::selection {
+        @apply bg-grano-400 text-carbone-900;
+    }
+}

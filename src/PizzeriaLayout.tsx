@@ -1,0 +1,27 @@
+import { useEffect } from 'react'
+import { Outlet, useLocation, useNavigationType } from 'react-router-dom'
+import { PizzeriaFooter } from './components/PizzeriaFooter'
+import { PizzeriaNav } from './components/PizzeriaNav'
+
+/** Nav, pagina e footer, comuni a home e menù. */
+export function PizzeriaLayout() {
+    const location = useLocation()
+    const navigationType = useNavigationType()
+
+    // react-router non riporta in cima la pagina nuova: lo facciamo qui. Lo scroll verso le
+    // ancore (#contatti, #margherita…) lo fa ogni pagina con useScrollToHash, perché solo lei
+    // sa quando i suoi elementi esistono.
+    useEffect(() => {
+        if (!location.hash && navigationType !== 'POP') window.scrollTo({ top: 0, behavior: 'instant' })
+    }, [location.hash, location.key, navigationType])
+
+    return (
+        <div className="pizzeria-root min-h-screen">
+            <PizzeriaNav />
+            <main>
+                <Outlet />
+            </main>
+            <PizzeriaFooter />
+        </div>
+    )
+}

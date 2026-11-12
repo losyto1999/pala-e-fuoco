@@ -31,7 +31,7 @@ export function LanguageSwitch() {
                         lang={l}
                         aria-pressed={lang === l}
                         onClick={() => choose(l)}
-                        className={`px-1 py-2 text-[0.8rem] font-bold uppercase tracking-[0.12em] underline-offset-[0.4em] transition-colors sm:px-1.5 ${
+                        className={`px-1 py-2 text-[0.8rem] back:max-[419px]:px-0.5 font-bold uppercase tracking-[0.12em] underline-offset-[0.4em] transition-colors sm:px-1.5 ${
                             lang === l
                                 ? 'text-terracotta-700 underline decoration-2'
                                 : 'text-carbone-900/70 hover:text-carbone-900'

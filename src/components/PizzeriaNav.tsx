@@ -25,13 +25,13 @@ export function PizzeriaNav() {
                 «Dove siamo» compaiono solo da 900px invece che da 768px. */}
             <nav className="mx-auto flex h-20 w-full max-w-6xl items-center justify-between gap-2 back:pl-[4.625rem] back:sm:pl-[6.5rem]">
                 <Link to="/" className="flex shrink-0 items-center gap-1.5 sm:gap-2">
-                    <img src={logo} alt="" className="h-10 w-auto max-[374px]:hidden sm:h-11" />
-                    <span className="font-display text-base font-extrabold tracking-tight text-carbone-900 sm:text-2xl">
+                    <img src={logo} alt="" className="h-10 w-auto max-[374px]:hidden back:max-sm:hidden sm:h-11" />
+                    <span className="font-display text-base font-extrabold tracking-tight text-carbone-900 back:max-[419px]:text-sm sm:text-2xl">
                         Pala e Fuoco
                     </span>
                 </Link>
 
-                <div className="flex items-center gap-2.5 sm:gap-4 lg:gap-8">
+                <div className="flex items-center gap-2.5 back:max-[419px]:gap-1.5 sm:gap-4 lg:gap-8">
                     <ul className="flex items-center gap-6">
                         {LINKS.map((link) => (
                             <li key={link.to} className={link.mobile ? '' : 'hidden md:block back:max-[899px]:hidden'}>
@@ -56,7 +56,7 @@ export function PizzeriaNav() {
                     <button
                         type="button"
                         aria-label={t('nav.call', { phone: INFO.phone })}
-                        className="inline-flex size-9 items-center justify-center gap-2 rounded-[3px] bg-terracotta-700 text-sm font-semibold text-crema-50 transition hover:bg-terracotta-800 active:translate-y-px lg:size-auto lg:px-4 lg:py-2.5"
+                        className="inline-flex size-9 back:max-[359px]:hidden items-center justify-center gap-2 rounded-[3px] bg-terracotta-700 text-sm font-semibold text-crema-50 transition hover:bg-terracotta-800 active:translate-y-px lg:size-auto lg:px-4 lg:py-2.5"
                     >
                         <Phone className="size-4" />
                         <span className="hidden tabular-nums lg:inline">{INFO.phone}</span>

@@ -19,7 +19,10 @@
         "menu": "Menu",
         "where": "Find us",
         "call": "Call {{phone}}",
-        "language": "Language"
+        "language": "Language",
+        "navigation": "Navigation",
+        "openNavigation": "Open navigation",
+        "closeNavigation": "Close navigation"
     },
     "footer": {
         "tagline": "Wood-fired pizzeria in Rome"

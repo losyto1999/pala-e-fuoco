@@ -19,7 +19,10 @@
         "menu": "Menù",
         "where": "Dove siamo",
         "call": "Chiama il {{phone}}",
-        "language": "Lingua"
+        "language": "Lingua",
+        "navigation": "Navigazione",
+        "openNavigation": "Apri la navigazione",
+        "closeNavigation": "Chiudi la navigazione"
     },
     "footer": {
         "tagline": "Pizzeria con forno a legna, a Roma"

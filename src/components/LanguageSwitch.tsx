@@ -7,8 +7,9 @@ const LANGS: Lang[] = ['it', 'en']
 /**
  * Selettore IT/EN «a stampa», come le voci della nav: niente pillole, la lingua attiva è
  * sottolineata in terracotta. La scelta resta salvata nel browser (vedi i18n/index.ts).
+ * `large` è la versione per la sidebar mobile, con aree di tocco più grandi.
  */
-export function LanguageSwitch() {
+export function LanguageSwitch({ large = false }: { large?: boolean }) {
     const { t, i18n } = useTranslation()
     const { lang } = useLocale()
 
@@ -31,7 +32,11 @@ export function LanguageSwitch() {
                         lang={l}
                         aria-pressed={lang === l}
                         onClick={() => choose(l)}
-                        className={`px-1 py-2 text-[0.8rem] back:max-[419px]:px-0.5 font-bold uppercase tracking-[0.12em] underline-offset-[0.4em] transition-colors sm:px-1.5 ${
+                        className={`font-bold uppercase underline-offset-[0.4em] transition-colors ${
+                            large
+                                ? 'px-3 py-2.5 text-base tracking-[0.14em]'
+                                : 'px-1 py-2 text-[0.8rem] tracking-[0.12em] sm:px-1.5'
+                        } ${
                             lang === l
                                 ? 'text-terracotta-700 underline decoration-2'
                                 : 'text-carbone-900/70 hover:text-carbone-900'

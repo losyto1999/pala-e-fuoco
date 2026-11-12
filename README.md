@@ -14,15 +14,15 @@ Sito di una pizzeria di quartiere immaginaria, con **menù filtrabile, orari e s
 - **Menù** di 10 pizze con prezzo, ingredienti e illustrazione per le tre classiche, più il supplemento per l'impasto senza glutine. Il filtro «Solo vegetariane» mostra quante pizze troverebbe e annuncia il risultato ai lettori di schermo.
 - **Link diretti alle pizze**: in home ogni nome porta alla sua voce nel menù (`/menu#diavola`), che si illumina per un attimo. Anche «Dove siamo» (`/#contatti`) funziona da qualunque pagina.
 - **Riassunto del menù** in home ricavato dai dati: numero di pizze, quante sono vegetariane, la più economica e la più cara. Cambiando il menù il testo resta giusto.
-- **Italiano e inglese** con un selettore nella nav. La scelta resta salvata nel browser. Prezzi (`7,50 €` / `€7.50`) e giorni cambiano con la lingua; gli orari restano in 24 ore.
-- **Responsive**, da 320px in su: sotto i 375px il logo lascia il posto al solo nome, su mobile le illustrazioni del menù diventano una striscia orizzontale.
+- **Italiano e inglese** con un selettore di lingua, nella nav su desktop e nella sidebar su mobile. La scelta resta salvata nel browser. Prezzi (`7,50 €` / `€7.50`) e giorni cambiano con la lingua; gli orari restano in 24 ore.
+- **Responsive**, da 320px in su: su mobile la nav si riduce a logo, pulsante «Chiama» e hamburger, che apre una sidebar con i link e il selettore di lingua (sotto i 375px il logo lascia il posto al solo nome); le illustrazioni del menù diventano una striscia orizzontale.
 - **Accessibile**: contrasti WCAG AA, filtro con annuncio per i lettori di schermo, animazioni spente con «riduci movimento» attivo nel sistema.
 
 | Menù | Contatti e orari |
 |---|---|
 | ![Menù con il filtro vegetariano e le illustrazioni delle pizze](docs/screenshots/menu.png) | ![Orari, stato di apertura e cartina della zona](docs/screenshots/contatti.png) |
 
-![Versione mobile in italiano e in inglese](docs/screenshots/mobile.png)
+![Versione mobile: nav con hamburger in italiano, sidebar con link e selettore di lingua in inglese](docs/screenshots/mobile.png)
 
 ## Tecnologie
 
@@ -88,8 +88,9 @@ src/
   pizzeria.css             Tailwind con il tema della pizzeria (palette, font, grana della carta)
   assets/                  logo e illustrazioni delle pizze (WebP)
   components/
-    PizzeriaNav.tsx        logo, link, selettore di lingua e pulsante «Chiama»
+    PizzeriaNav.tsx        logo, link, pulsante «Chiama» e hamburger che apre la sidebar
     PizzeriaFooter.tsx     indirizzo, telefono e orari
+    NavDrawer.tsx          sidebar della nav mobile (portale, focus, Esc, blocco dello scroll)
     LanguageSwitch.tsx     selettore IT/EN
     MenuRow.tsx            voce di menù con i puntini di guida; id = slug, usato come ancora
     PhotoPrint.tsx         illustrazione di una pizza trattata come una stampa, con didascalia
